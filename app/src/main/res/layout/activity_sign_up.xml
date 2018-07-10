@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF1733CE"
+    android:paddingLeft="35dp"
+    android:paddingRight="35dp"
+    tools:context="com.example.joel.jsonparse.SignUpActivity">
+
+
+    <EditText
+        android:id="@+id/lastField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_action_email"
+
+        android:ems="10"
+        android:hint="email..."
+        android:inputType="textPersonName"
+
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:soundEffectsEnabled="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#FFFFFFFF" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lastField"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="Post email..."
+        android:inputType="textEmailAddress"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp" />
+
+
+    <Button
+        android:id="@+id/signUpbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:text="Sign Up"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>
+
