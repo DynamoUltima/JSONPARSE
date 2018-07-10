@@ -10,7 +10,7 @@ package com.example.joel.jsonparse;
         import com.squareup.picasso.Picasso;
 
         import static com.example.joel.jsonparse.MainActivity.EXTRA_CREATOR;
-        import static com.example.joel.jsonparse.MainActivity.EXTRA_LIKES;
+    //    import static com.example.joel.jsonparse.MainActivity.EXTRA_LIKES;
         import static com.example.joel.jsonparse.MainActivity.EXTRA_URL;
 
 
@@ -24,7 +24,7 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String imageUrl = intent.getStringExtra(EXTRA_URL);
         String creatorName = intent.getStringExtra(EXTRA_CREATOR);
-        int likeCount = intent.getIntExtra(EXTRA_LIKES, 0);
+      //  int likeCount = intent.getIntExtra(EXTRA_LIKES, 0);
 
         ImageView imageView = (ImageView) findViewById(R.id.image_view_detail);
         TextView textViewCreator = (TextView) findViewById(R.id.text_view_creator_detail);
@@ -32,6 +32,6 @@ public class DetailActivity extends AppCompatActivity {
 
         Picasso.with(this).load(imageUrl).fit().centerInside().into(imageView);
         textViewCreator.setText(creatorName);
-        textViewLikes.setText("Likes: " + likeCount);
+       // textViewLikes.setText("Likes: " + likeCount);
     }
 }

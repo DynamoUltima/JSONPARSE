@@ -4,12 +4,12 @@ package com.example.joel.jsonparse;
 public class ExampleItem {
     private String mImageUrl;
     private String mCreator;
-    private int mLikes;
+   // private int mLikes;
 
-    public ExampleItem(String imageUrl, String creator, int likes) {
+    public ExampleItem(String imageUrl, String creator) {
         mImageUrl = imageUrl;
         mCreator = creator;
-        mLikes = likes;
+       // mLikes = likes;
     }
 
     public String getImageUrl() {
@@ -20,7 +20,7 @@ public class ExampleItem {
         return mCreator;
     }
 
-    public int getLikeCount() {
+ /* public int getLikeCount() {
         return mLikes;
-    }
+    }*/
 }
