@@ -68,6 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
 
+
                             Toast.makeText(getApplicationContext(), "Response:  " + response.toString(), Toast.LENGTH_LONG).show();
                             Log.i("resz",response.toString());
                         }

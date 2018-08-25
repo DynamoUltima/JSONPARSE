@@ -41,13 +41,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements ExampleAdapter.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements ExampleAdapter.OnItemClickListener  {
     public static final String EXTRA_URL = "imageUrl";
     public static final String EXTRA_CREATOR = "creatorName";
     // public static final String EXTRA_LIKES = "likeCount";
 
     private RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerViewHorizontal;
+
     private ExampleAdapter mExampleAdapter;
+    private ExampleAdapterHorizontal mExampleAdapterHorizontal;
+
     private ArrayList<ExampleItem> mExampleList;
     private RequestQueue mRequestQueue;
     public  static  String imageUrl;
@@ -59,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //set horizontal LinearLayout as layout manager to creating horizontal list view
+        mRecyclerViewHorizontal = (RecyclerView) findViewById(R.id.recycle_view);
+        mRecyclerViewHorizontal.setHasFixedSize(true);
+        mRecyclerViewHorizontal.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -92,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
 
                                 mExampleList.add(new ExampleItem(imageUrl, creatorName));
                             }
+                            //set horizontal LinearLayout as layout manager to creating horizontal list view
+                            mExampleAdapterHorizontal = new ExampleAdapterHorizontal(MainActivity.this, mExampleList);
+                            mRecyclerViewHorizontal.setAdapter(mExampleAdapterHorizontal);
+//                            mExampleAdapterHorizontal.setOnItemClickListener((ExampleAdapterHorizontal.OnItemClickListener) MainActivity.this);
 
                             mExampleAdapter = new ExampleAdapter(MainActivity.this, mExampleList);//the was a third parameter
                             mRecyclerView.setAdapter(mExampleAdapter);
